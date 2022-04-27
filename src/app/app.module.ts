@@ -10,6 +10,11 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { UserComponent } from './user/user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { UsereditComponent } from './useredit/useredit.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardDataComponent } from './dashboard-data/dashboard-data.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,16 @@ import { UserComponent } from './user/user.component';
     UserListComponent,
     UserCreateComponent,
     UserViewComponent,
-    UserComponent
+    UserComponent,
+    UsereditComponent,
+    LoginComponent,
+    DashboardDataComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
