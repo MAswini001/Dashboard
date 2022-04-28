@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { logindata, tokendata, userdata } from 'src/model';
@@ -14,7 +14,12 @@ createUser(userdata:userdata):Observable<userdata>{
 }
 
 userdata():Observable<Array<userdata>>{
-   return this.http.get<Array<userdata>>('https://6264ec9c94374a2c506b3a79.mockapi.io/userdata')
+
+
+   return this.http.get<Array<userdata>>('https://6264ec9c94374a2c506b3a79.mockapi.io/userdata',{headers :new HttpHeaders({
+    Authorization:localStorage.getItem('app_token') || '',
+   })
+  })
 }
 
 userbyid(id:String):Observable<userdata>{

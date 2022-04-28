@@ -19,20 +19,20 @@ export class UserListComponent implements OnInit {
     this.fetchdata()
     }
     fetchdata(){
-      //this.userservice.userdata().subscribe((data)=>{
-        //this.userlist=data;
-   // })
+      this.userservice.userdata().subscribe((data)=>{
+    
+   })
     }
   deleteuser(id:any){
-   // let confirmres=confirm("Are you sure do you want delete?")
-    //if(confirmres){
-      //this.userservice.deleteuserbyid(id).subscribe(()=>{
-        //this.fetchdata()
-      //})
+   let confirmres=confirm("Are you sure do you want delete?")
+    if(confirmres){
+    this.userservice.deleteuserbyid(id).subscribe(()=>{
+        this.fetchdata()
+    })
 
       }
     }
   
 
 
-
+  }
